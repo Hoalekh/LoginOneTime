@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using BoDi;
-using Microsoft.Playwright;
+﻿using Microsoft.Playwright;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -8,7 +6,7 @@ namespace LoginOneTime.Drivers
 {
     [TestFixture]
     [Binding]
-    //Cách lưu vào json khi đóng context vẫn chạy đc do nó còn lưu trên json và lấy ra dùng, có thể khôi phục lại dữ liệu
+  
     public class Driver
     {
         public static string Email => "//input[@id='email']";
@@ -19,7 +17,7 @@ namespace LoginOneTime.Drivers
         private static IPage? _page;
         private static IBrowser? _browser;
         private static IBrowserContext? _context;
-        public IPage Page => _page;
+        public IPage Page => _page!;
 
         [BeforeFeature]
         public static async Task BeforeFeature()
@@ -43,9 +41,11 @@ namespace LoginOneTime.Drivers
             await _page.WaitForSelectorAsync(Profile);
             await _page.ClickAsync(Profile);
 
+            var stateFilePath = Path.Combine(Directory.GetCurrentDirectory(), "state.json");
+
             await _context.StorageStateAsync(new()
             {
-                Path = "state.json"
+                Path = stateFilePath
             });
 
             await _page.CloseAsync();
@@ -62,10 +62,10 @@ namespace LoginOneTime.Drivers
                 Channel = "chrome",
                 SlowMo = 2000
             });
-
+            var stateFilePath = Path.Combine(Directory.GetCurrentDirectory(), "state.json");
             _context = await _browser.NewContextAsync(new BrowserNewContextOptions
             {
-                StorageStatePath = "state.json"
+                StorageStatePath = stateFilePath
             });
 
             _page = await _context.NewPageAsync();
@@ -74,15 +74,15 @@ namespace LoginOneTime.Drivers
         [AfterScenario]
         public async Task AfterScenario()
         {
-            await _page.CloseAsync();
-            await _context.CloseAsync();
-            await _browser.CloseAsync();
+            await _page!.CloseAsync();
+            await _browser!.CloseAsync();
         }
 
         [AfterFeature]
         public static async Task AfterFeature()
         {
-            await _browser.CloseAsync();
+            await _context!.CloseAsync();
+            await _browser!.CloseAsync();
         }
     }
 }

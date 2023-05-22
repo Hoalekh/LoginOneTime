@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿
 using Microsoft.Playwright;
 
 namespace LoginOneTime.Page
@@ -30,7 +24,7 @@ namespace LoginOneTime.Page
             await this.GetPage().Locator(locator).ClickAsync();
 
         }
-
+      
 
         public async Task FillTextBox(string locator, string value)
         {
@@ -51,10 +45,8 @@ namespace LoginOneTime.Page
             try
             {
                 var element = await this.GetPage().QuerySelectorAsync(locator);
-                var text = await element.TextContentAsync();
-                return text.TrimEnd();
-
-
+                var text = await element!.TextContentAsync();
+                return text!.TrimEnd();
             }
             catch (Exception ex)
             {
@@ -79,8 +71,28 @@ namespace LoginOneTime.Page
             {
                 throw new Exception($"your message here: {ex.Message}");
             }
+
         }
-       
+        public async Task HoverToElement(string locator)
+        {
+            await GetPage().WaitForSelectorAsync(locator);
+            var element = await GetPage().QuerySelectorAsync(locator);
+            if (element == null)
+            {
+                throw new Exception($"Element with locator '{locator}' not found.");
+            }
+            await element.HoverAsync();
+        }
+        public async Task<List<string?>> GetDropdownOptions(string locator)
+        {
+            await GetPage().WaitForSelectorAsync(locator);
+            var dropdownElements = await GetPage().QuerySelectorAllAsync(locator);
+            var optionTextTasks = dropdownElements.Select(async element => await element.TextContentAsync());
+            var optionTexts = await Task.WhenAll(optionTextTasks);
+
+            return optionTexts.ToList();
+        }
+
 
     }
 
