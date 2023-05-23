@@ -2,7 +2,15 @@
 
 Scenario: Verify homepage
 		Given I go to url "https://accounts.lambdatest.com/"
+		Then The left menu displays information
+		| Menu              |
+		| Dashboard         |
+		| Real Time Testing |
+		| Real Device       |
+		| Settings          |
 		Then I click Dashboard
+		Then I verify Color "Realtime Sessions" is "rgb(224, 233, 248)"
+		Then I verify Color "Automation Sessions" is "rgb(248, 224, 224)"
 		Then I click to Real Time Testing
 		And I click to Real Device
 

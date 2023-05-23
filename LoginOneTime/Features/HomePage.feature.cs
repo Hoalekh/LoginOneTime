@@ -103,13 +103,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
   testRunner.Given("I go to url \"https://accounts.lambdatest.com/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Menu"});
+                table1.AddRow(new string[] {
+                            "Dashboard"});
+                table1.AddRow(new string[] {
+                            "Real Time Testing"});
+                table1.AddRow(new string[] {
+                            "Real Device"});
+                table1.AddRow(new string[] {
+                            "Settings"});
 #line 5
+  testRunner.Then("The left menu displays information", ((string)(null)), table1, "Then ");
+#line hidden
+#line 11
   testRunner.Then("I click Dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 6
+#line 12
+  testRunner.Then("I verify Color \"Realtime Sessions\" is \"rgb(224, 233, 248)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 13
+  testRunner.Then("I verify Color \"Automation Sessions\" is \"rgb(248, 224, 224)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 14
   testRunner.Then("I click to Real Time Testing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 7
+#line 15
   testRunner.And("I click to Real Device", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -123,7 +142,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify homepagelist", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 9
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -143,120 +162,120 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 10
+#line 18
   testRunner.Given("I go to url \"https://www.lambdatest.com/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 11
+#line 19
   testRunner.Then("I hover over the \"Platform\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Platform"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Online Browser Testing"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Selenium Testing"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Cypress Testing"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Playwright Testing"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "HyperExecute"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "On-Premise Selenium Grid"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Native Mobile App Testing"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Real Devices Cloud"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Visual Regression Cloud"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Test Intelligence"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Automation Testing Cloud"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Smart TV Testing Cloud"});
-#line 12
-  testRunner.And("the dropdown menu for \"Platform\" displays information", ((string)(null)), table1, "And ");
+#line 20
+  testRunner.And("the dropdown menu for \"Platform\" displays information", ((string)(null)), table2, "And ");
 #line hidden
-#line 26
+#line 34
   testRunner.Then("I hover over the \"Enterprise\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Enterprise"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "Digital Experience Testing"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "Enterprise Execution Environment"});
-#line 27
-  testRunner.And("the dropdown menu for \"Enterprise\" displays information", ((string)(null)), table2, "And ");
+#line 35
+  testRunner.And("the dropdown menu for \"Enterprise\" displays information", ((string)(null)), table3, "And ");
 #line hidden
-#line 31
+#line 39
   testRunner.Then("I hover over the \"Resources\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Resources"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Blog"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Webinars"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Learning Hub"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Videos"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Documentation"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "API"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Newsletter"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Community"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Certifications"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Write for Us"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Customer Stories"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Community & Support"});
-#line 32
-  testRunner.And("the dropdown menu for \"Resources\" displays information", ((string)(null)), table3, "And ");
+#line 40
+  testRunner.And("the dropdown menu for \"Resources\" displays information", ((string)(null)), table4, "And ");
 #line hidden
-#line 46
+#line 54
   testRunner.Then("I hover over the \"Developers\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Developers"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Selenium"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Cypress"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Mobile App Testing"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Real Time Web Testing"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Changelog"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Documentation"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "API"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "GitHub Repositories"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "FAQs"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Selenium Guide"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Cypress Guide"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Mobile Testing Advisor"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Automation Testing Advisor"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Web Technologies Compatibility"});
-#line 47
-  testRunner.And("the dropdown menu for \"Developers\" displays information", ((string)(null)), table4, "And ");
+#line 55
+  testRunner.And("the dropdown menu for \"Developers\" displays information", ((string)(null)), table5, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
