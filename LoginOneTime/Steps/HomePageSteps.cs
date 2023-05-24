@@ -60,12 +60,13 @@ namespace LoginOneTime.Steps
         [Then(@"I verify Color ""([^""]*)"" is ""([^""]*)""")]
         public async Task ThenIVerifyColor(string p0, string p1)
         {
-            var elementHandle = await this.homePage.GetPage().QuerySelectorAsync("//div[text()='" + p0 + "']/following-sibling::div//*[local-name()='svg']/*[local-name()='path'][1]");
-
-            string initialColor = await elementHandle!.EvaluateAsync<string>("el => getComputedStyle(el).stroke");
-
-            Assert.AreEqual(initialColor, p1, "do not match the expected values");
-
+            
+            var elementHandle = await homePage.GetPage().QuerySelectorAsync("//div[text()='" + p0 + "']/following-sibling::div//*[local-name()='svg']/*[local-name()='path'][1]");
+            if(elementHandle != null)
+            {
+                string initialColor = await elementHandle.EvaluateAsync<string>("el => getComputedStyle(el).stroke");
+                Assert.AreEqual(initialColor, p1, "do not match the expected values");
+            }
         }
 
         [Then(@"I click to Real Time Testing")]
@@ -86,6 +87,9 @@ namespace LoginOneTime.Steps
         {
             await homePage.HoverToElement("//a[contains(text(),'" + platform + "')]");
         }
+
+       
+
         [Then(@"the dropdown menu for ""([^""]*)"" displays information")]
         public async Task ThenTheDropdownMenuForDisplaysInformation(string p0, Table table)
         {

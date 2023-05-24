@@ -21,7 +21,6 @@ namespace LoginOneTime.Page
 
         }
 
-
         public async Task ClickToButton(string locator)
         {
             await this.GetPage().Locator(locator).ClickAsync();
@@ -41,8 +40,6 @@ namespace LoginOneTime.Page
             }
 
         }
-
-
         public async Task<string> GetText(string locator)
         {
             try

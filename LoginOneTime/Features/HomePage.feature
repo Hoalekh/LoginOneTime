@@ -13,7 +13,6 @@ Scenario: Verify homepage
 		Then I verify Color "Automation Sessions" is "rgb(248, 224, 224)"
 		Then I click to Real Time Testing
 		And I click to Real Device
-
 Scenario: Verify homepagelist
 		Given I go to url "https://www.lambdatest.com/"
 		Then I hover over the "Platform" tab
@@ -68,4 +67,4 @@ Scenario: Verify homepagelist
 		| Mobile Testing Advisor		|
 		| Automation Testing Advisor	|
 		| Web Technologies Compatibility|
-		
+
